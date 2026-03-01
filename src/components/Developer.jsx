@@ -4,10 +4,23 @@ Command: npx gltfjsx@6.5.0 developer.glb -T
 Files: developer.glb [981.62KB] > /Users/hsuwinlat/Desktop/jsm pj/threejscc-portfolio/public/models/developer-transformed.glb [395.08KB] (60%)
 */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { useGraph } from '@react-three/fiber';
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei';
 import { SkeletonUtils } from 'three-stdlib';
+import * as THREE from 'three';
+
+/**
+ * Remap animation track names so FBX "Armature" matches GLTF "Hips" root bone (fixes PropertyBinding warning).
+ */
+function remapArmatureToHips(clip) {
+  const newTracks = clip.tracks.map((track) => {
+    const cloned = track.clone();
+    cloned.name = track.name.replace(/^Armature\./, 'Hips.');
+    return cloned;
+  });
+  return new THREE.AnimationClip(clip.name, clip.duration, newTracks);
+}
 
 /**
  * Skinned 3D character: GLTF body + FBX animations (idle, salute, clapping, victory).
@@ -25,15 +38,22 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   const { animations: clappingAnimation } = useFBX('/models/animations/clapping.fbx');
   const { animations: victoryAnimation } = useFBX('/models/animations/victory.fbx');
 
-  idleAnimation[0].name = 'idle';
-  saluteAnimation[0].name = 'salute';
-  clappingAnimation[0].name = 'clapping';
-  victoryAnimation[0].name = 'victory';
+  const clips = useMemo(() => {
+    const raw = [
+      idleAnimation[0],
+      saluteAnimation[0],
+      clappingAnimation[0],
+      victoryAnimation[0],
+    ];
+    const names = ['idle', 'salute', 'clapping', 'victory'];
+    return raw.map((clip, i) => {
+      const remapped = remapArmatureToHips(clip);
+      remapped.name = names[i];
+      return remapped;
+    });
+  }, [idleAnimation, saluteAnimation, clappingAnimation, victoryAnimation]);
 
-  const { actions } = useAnimations(
-    [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
-    group,
-  );
+  const { actions } = useAnimations(clips, group);
 
   useEffect(() => {
     actions[animationName].reset().fadeIn(0.5).play();
