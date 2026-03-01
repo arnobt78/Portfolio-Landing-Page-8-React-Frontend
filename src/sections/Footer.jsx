@@ -1,3 +1,4 @@
+/** Site footer: legal links, social icons (GitHub, Twitter, Instagram), dynamic year and copyright. */
 const Footer = () => {
   return (
     <footer className="c-space pt-7 pb-3 border-t border-black-300 flex justify-between items-center flex-wrap gap-5">

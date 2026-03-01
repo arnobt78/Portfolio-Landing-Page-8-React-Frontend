@@ -1,5 +1,6 @@
 import { clientReviews } from '../constants/index.js';
 
+/** Testimonials section: maps clientReviews (name, position, img, review) and shows 5-star rating. */
 const Clients = () => {
   return (
     <section className="c-space my-20">

@@ -8,6 +8,7 @@
 
 import { Float, useGLTF } from '@react-three/drei';
 
+/** 3D React logo (GLTF); Float adds gentle floating; position/scale passed via props from Hero. */
 const ReactLogo = (props) => {
   const { nodes, materials } = useGLTF('models/react.glb');
 

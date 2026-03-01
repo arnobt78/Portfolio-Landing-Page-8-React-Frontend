@@ -1,5 +1,6 @@
 import { Html, useProgress } from '@react-three/drei';
 
+/** R3F loading indicator: renders inside Canvas, shows progress % from useProgress (drei) while assets load. */
 const CanvasLoader = () => {
   const { progress } = useProgress();
   return (

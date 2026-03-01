@@ -1,3 +1,4 @@
+/** Toast alert: type = 'danger' (red) | 'success' (blue); text = message. Fixed bottom-right, high z-index. */
 const Alert = ({ type, text }) => {
   return (
     <div className="fixed bottom-5 right-5 flex justify-center items-center z-50">

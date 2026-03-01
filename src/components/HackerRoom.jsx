@@ -6,6 +6,7 @@ Files: hacker-room-new.glb [34.62MB] > /Users/hsuwinlat/Desktop/jsm pj/threejscc
 
 import { useGLTF, useTexture } from '@react-three/drei';
 
+/** 3D desk scene (GLTF): monitors, table, server, etc. Custom textures for screen/monitor. Accepts position, scale, rotation via props. */
 export function HackerRoom(props) {
   const { nodes, materials } = useGLTF('/models/hacker-room.glb');
 

@@ -13,6 +13,7 @@ const projectCount = myProjects.length;
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
+  /** Carousel: previous/next with wrap (last -> first, first -> last). */
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
       if (direction === 'previous') {
@@ -23,6 +24,7 @@ const Projects = () => {
     });
   };
 
+  // Animate in project title/desc when selection changes (staggered fade-in).
   useGSAP(() => {
     gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
   }, [selectedProjectIndex]);
@@ -87,6 +89,7 @@ const Projects = () => {
             <Center>
               <Suspense fallback={<CanvasLoader />}>
                 <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                  {/* Video texture from current project is applied to the 3D monitor screen. */}
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>

@@ -6,6 +6,7 @@ import Button from '../components/Button.jsx';
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
+  /** Copies email to clipboard and shows tick icon for 2s, then reverts to copy icon. */
   const handleCopy = () => {
     navigator.clipboard.writeText(' john@doe.com');
     setHasCopied(true);
@@ -49,6 +50,7 @@ const About = () => {
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+              {/* react-globe.gl: night earth texture with optional label (e.g. location). */}
               <Globe
                 height={326}
                 width={326}

@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scroll for hash navigation (#home, #about, etc.) */
 * {
   scroll-behavior: smooth;
 }
@@ -13,6 +14,7 @@ body {
   font-family: 'General Sans', sans-serif;
 }
 
+/* --- Custom utilities (used across sections) --- */
 @layer utilities {
   .c-space {
     @apply sm:px-10 px-5;

@@ -12,10 +12,12 @@ const Contact = () => {
 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
+  /** Controlled input: updates form state by field name (name, email, message). */
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
 
+  /** Sends form via EmailJS using env vars; shows success/error alert and resets form on success. */
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -26,22 +28,20 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: 'JavaScript Mastery',
+          to_name: 'John Doe',
           from_email: form.email,
-          to_email: 'sujata@jsmastery.pro',
+          to_email: 'john@doe.com',
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: 'Thank you for your message 😃',
-            type: 'success',
-          });
-
+      .then(() => {
+        setLoading(false);
+        showAlert({
+          show: true,
+          text: 'Thank you for your message 😃',
+          type: 'success',
+        });
           setTimeout(() => {
             hideAlert(false);
             setForm({
@@ -72,7 +72,7 @@ const Contact = () => {
         <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen" />
 
         <div className="contact-container">
-          <h3 className="head-text">Let's talk</h3>
+          <h3 className="head-text">Let&apos;s talk</h3>
           <p className="text-lg text-white-600 mt-3">
             Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
             life, I’m here to help.

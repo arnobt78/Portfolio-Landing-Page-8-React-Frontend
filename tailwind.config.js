@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        /* General Sans loaded via @import in index.css */
         generalsans: ['General Sans', 'sans-serif'],
       },
       colors: {

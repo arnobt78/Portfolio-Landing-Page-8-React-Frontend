@@ -3,6 +3,7 @@ import { Center, useTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useCallback, useRef } from 'react';
 
+/** Four concentric torus rings with matcap; position prop moves the group; infinite rotation via GSAP. */
 const Rings = ({ position }) => {
   const refList = useRef([]);
   const getRef = useCallback((mesh) => {

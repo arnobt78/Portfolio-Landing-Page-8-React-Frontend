@@ -8,6 +8,7 @@ import reactThree from '@react-three/eslint-plugin'
 export default [
   { ignores: ['dist'] },
   {
+    /* React + JSX + React Three Fiber (allow R3F/Three.js props like position-y, etc.) */
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,

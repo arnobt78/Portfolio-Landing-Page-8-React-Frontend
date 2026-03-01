@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
 
+/** 3D cube with matcap texture; Float for subtle hover; rotation animates continuously, faster when hovered. */
 const Cube = ({ ...props }) => {
   const { nodes } = useGLTF('models/cube.glb');
 

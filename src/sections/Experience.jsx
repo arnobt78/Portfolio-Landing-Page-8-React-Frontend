@@ -7,6 +7,7 @@ import CanvasLoader from '../components/Loading.jsx';
 import { workExperiences } from '../constants/index.js';
 
 const WorkExperience = () => {
+  /** Current character animation: 'idle' | 'salute' | 'clapping' | 'victory'. Set by hover/click on job cards. */
   const [animationName, setAnimationName] = useState('idle');
 
   return (
@@ -23,6 +24,7 @@ const WorkExperience = () => {
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
               <Suspense fallback={<CanvasLoader />}>
+                {/* Developer plays FBX animation matching animationName (from workExperiences[].animation). */}
                 <Developer position-y={-3} scale={3} animationName={animationName} />
               </Suspense>
             </Canvas>

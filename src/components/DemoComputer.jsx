@@ -7,10 +7,14 @@ import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+/**
+ * 3D computer (GLTF) with video texture on monitor screen. texture prop = video URL (e.g. project preview).
+ * flipY: false fixes video orientation; GSAP animates initial rotation on load.
+ */
 const DemoComputer = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models/computer.glb');
-  const { actions } = useAnimations(animations, group);
+  useAnimations(animations, group);
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
 

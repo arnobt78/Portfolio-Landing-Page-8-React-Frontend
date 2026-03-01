@@ -1,3 +1,4 @@
+/** Navbar: id, name, href (hash anchors for single-page scroll). */
 export const navLinks = [
   {
     id: 1,
@@ -21,6 +22,7 @@ export const navLinks = [
   },
 ];
 
+/** Client testimonials: id, name, position, img path, review text. */
 export const clientReviews = [
   {
     id: 1,
@@ -56,6 +58,7 @@ export const clientReviews = [
   },
 ];
 
+/** Project carousel: title, desc, subdesc, href, texture (video), logo, logoStyle, spotlight, tags[]. */
 export const myProjects = [
   {
     title: 'Podcastr - AI Podcast Platform',
@@ -135,7 +138,7 @@ export const myProjects = [
     title: 'CarePulse - Health Management System',
     desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+      'With a focus on efficiency, CarePulse integrates complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
     href: 'https://www.youtube.com/',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
@@ -246,6 +249,7 @@ export const myProjects = [
   },
 ];
 
+/** Returns responsive positions/scales for Hero 3D elements (desk, cube, rings, etc.) by breakpoint. */
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
@@ -257,6 +261,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
   };
 };
 
+/** Work experience timeline: id, name, pos, duration, title, icon path, animation name (idle/salute/clapping/victory). */
 export const workExperiences = [
   {
     id: 1,

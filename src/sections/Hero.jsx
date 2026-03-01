@@ -15,7 +15,7 @@ import { calculateSizes } from '../constants/index.js';
 import { HackerRoom } from '../components/HackerRoom.jsx';
 
 const Hero = () => {
-  // Use media queries to determine screen size
+  // Use media queries to determine screen size for responsive 3D layout
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -24,6 +24,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
+      {/* Headline and tagline; 3D canvas is absolute so it sits behind/around the text */}
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
           Hi, I am John Doe <span className="waving-hand">👋</span>
@@ -33,6 +34,7 @@ const Hero = () => {
 
       <div className="w-full h-full absolute inset-0">
         <Canvas className="w-full h-full">
+          {/* Suspense shows CanvasLoader while GLTF/textures load */}
           <Suspense fallback={<CanvasLoader />}>
             {/* To hide controller */}
             <Leva hidden />

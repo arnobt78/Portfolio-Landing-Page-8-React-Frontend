@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
+/** 3D target (stand + rings + bullseye). GSAP yoyo animation moves it up/down for visual interest. */
 const Target = (props) => {
   const targetRef = useRef();
 
