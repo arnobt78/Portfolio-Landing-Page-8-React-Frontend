@@ -13,8 +13,9 @@ import { useGSAP } from '@gsap/react';
  */
 const DemoComputer = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('/models/computer.glb');
-  useAnimations(animations, group);
+  const { nodes, materials } = useGLTF('/models/computer.glb');
+  // Don't bind GLTF animations—they reference "Armature" which isn't in the scene and we don't use them
+  useAnimations([], group);
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
 
