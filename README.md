@@ -1,4 +1,4 @@
-# Portfolio Landing Page 8 - React, Vite, TailwindCSS, Three.js, JavaScript Frontend Project
+# Portfolio Landing Page 8 - React, Vite, JavaScript, TailwindCSS, Three.js Frontend Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.3.1-blue)](https://react.dev/)
@@ -11,7 +11,12 @@ A modern, single-page developer portfolio built with React, Vite, and Tailwind C
 
 - **Live Demo:** [https://portfolio-ui-8.vercel.app/](https://portfolio-ui-8.vercel.app/)
 
-<img width="1866" height="939" alt="Screenshot 2026-03-07 at 11 56 52" src="https://github.com/user-attachments/assets/3aa9cc89-20d2-43d9-b6cc-dbc8f0288bfe" /> <img width="1866" height="941" alt="Screenshot 2026-03-07 at 11 57 06" src="https://github.com/user-attachments/assets/0323a20c-780a-4ac0-9abc-2d2a83492d68" /> <img width="1871" height="870" alt="Screenshot 2026-03-07 at 11 57 19" src="https://github.com/user-attachments/assets/951c8439-222f-473f-88bd-02a2bff142c3" /> <img width="1829" height="746" alt="Screenshot 2026-03-07 at 11 57 30" src="https://github.com/user-attachments/assets/5ef3e28c-6b15-4286-a3c6-d9abbc54aaf9" /> <img width="1852" height="802" alt="Screenshot 2026-03-07 at 11 57 39" src="https://github.com/user-attachments/assets/524aeb07-1e22-4411-8802-2d283a03afc2" /> <img width="1860" height="880" alt="Screenshot 2026-03-07 at 11 57 52" src="https://github.com/user-attachments/assets/c9b6a94a-55b9-4dd0-8d12-8c70944d354d" />
+![Screenshot 2026-03-07 at 11 56 52](https://github.com/user-attachments/assets/3aa9cc89-20d2-43d9-b6cc-dbc8f0288bfe)
+![Screenshot 2026-03-07 at 11 57 06](https://github.com/user-attachments/assets/0323a20c-780a-4ac0-9abc-2d2a83492d68)
+![Screenshot 2026-03-07 at 11 57 19](https://github.com/user-attachments/assets/951c8439-222f-473f-88bd-02a2bff142c3)
+![Screenshot 2026-03-07 at 11 57 30](https://github.com/user-attachments/assets/5ef3e28c-6b15-4286-a3c6-d9abbc54aaf9)
+![Screenshot 2026-03-07 at 11 57 39](https://github.com/user-attachments/assets/524aeb07-1e22-4411-8802-2d283a03afc2)
+![Screenshot 2026-03-07 at 11 57 52](https://github.com/user-attachments/assets/c9b6a94a-55b9-4dd0-8d12-8c70944d354d)
 
 ## Table of Contents
 
@@ -52,16 +57,16 @@ There are **no API routes or server** in this repo; the only external integratio
 
 ## Tech Stack & Dependencies
 
-| Category        | Technology |
-|----------------|------------|
-| Framework      | React 18 |
-| Build tool     | Vite 5 |
-| Styling        | Tailwind CSS 3, custom CSS |
-| 3D / Canvas    | Three.js, @react-three/fiber, @react-three/drei, three-stdlib |
-| Animation      | GSAP, @gsap/react, Leva (dev) |
-| Globe          | react-globe.gl |
-| Contact form   | @emailjs/browser |
-| Utilities      | react-responsive, maath (easing) |
+| Category     | Technology                                                    |
+| ------------ | ------------------------------------------------------------- |
+| Framework    | React 18                                                      |
+| Build tool   | Vite 5                                                        |
+| Styling      | Tailwind CSS 3, custom CSS                                    |
+| 3D / Canvas  | Three.js, @react-three/fiber, @react-three/drei, three-stdlib |
+| Animation    | GSAP, @gsap/react, Leva (dev)                                 |
+| Globe        | react-globe.gl                                                |
+| Contact form | @emailjs/browser                                              |
+| Utilities    | react-responsive, maath (easing)                              |
 
 ---
 
@@ -172,12 +177,12 @@ Add `.env` to `.gitignore` so secrets are not committed.
 
 ## How to Run & Use
 
-| Command | Description |
-|--------|-------------|
-| `npm run dev` | Start Vite dev server (e.g. <http://localhost:5173>) |
-| `npm run build` | Production build → `dist/` |
-| `npm run preview` | Serve `dist/` locally to test production build |
-| `npm run lint` | Run ESLint on the project |
+| Command           | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| `npm run dev`     | Start Vite dev server (e.g. <http://localhost:5173>) |
+| `npm run build`   | Production build → `dist/`                           |
+| `npm run preview` | Serve `dist/` locally to test production build       |
+| `npm run lint`    | Run ESLint on the project                            |
 
 **Typical workflow:**
 
@@ -304,16 +309,16 @@ The app is one scrollable page. `App.jsx` composes the layout:
 
 ### Reusable components (short)
 
-| Component       | Role |
-|----------------|------|
-| **Button**     | CTA with optional beam animation; props: `name`, `isBeam`, `containerClass`. |
-| **Alert**      | Fixed toast; props: `type` ('danger' / 'success'), `text`. |
-| **useAlert**   | Returns `{ alert, showAlert, hideAlert }` for toggling Alert. |
-| **Loading**    | R3F loading state using `useProgress` from drei (Html + progress %). |
-| **HeroCamera** | Damped camera and optional group rotation from pointer; wraps children. |
-| **HackerRoom, Cube, Rings, ReactLogo, Target** | 3D objects for the hero scene. |
-| **Developer**  | 3D character with FBX animations; prop `animationName`. |
-| **DemoComputer** | 3D computer with video texture; prop `texture` (video URL). |
+| Component                                      | Role                                                                         |
+| ---------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Button**                                     | CTA with optional beam animation; props: `name`, `isBeam`, `containerClass`. |
+| **Alert**                                      | Fixed toast; props: `type` ('danger' / 'success'), `text`.                   |
+| **useAlert**                                   | Returns `{ alert, showAlert, hideAlert }` for toggling Alert.                |
+| **Loading**                                    | R3F loading state using `useProgress` from drei (Html + progress %).         |
+| **HeroCamera**                                 | Damped camera and optional group rotation from pointer; wraps children.      |
+| **HackerRoom, Cube, Rings, ReactLogo, Target** | 3D objects for the hero scene.                                               |
+| **Developer**                                  | 3D character with FBX animations; prop `animationName`.                      |
+| **DemoComputer**                               | 3D computer with video texture; prop `texture` (video URL).                  |
 
 ---
 
@@ -338,7 +343,9 @@ const { alert, showAlert, hideAlert } = useAlert();
 // ...
 showAlert({ text: 'Saved!', type: 'success' });
 // ...
-{alert.show && <Alert {...alert} />}
+{
+  alert.show && <Alert {...alert} />;
+}
 ```
 
 ---
@@ -389,12 +396,12 @@ To restyle: adjust `tailwind.config.js` and the custom classes in `index.css`; r
 
 ## Scripts & Tooling
 
-| Script     | Command         | Purpose |
-|-----------|-----------------|--------|
-| dev       | `npm run dev`   | Start Vite dev server |
-| build     | `npm run build` | Production build to `dist/` |
-| preview   | `npm run preview` | Serve `dist/` |
-| lint      | `npm run lint`  | Run ESLint |
+| Script  | Command           | Purpose                     |
+| ------- | ----------------- | --------------------------- |
+| dev     | `npm run dev`     | Start Vite dev server       |
+| build   | `npm run build`   | Production build to `dist/` |
+| preview | `npm run preview` | Serve `dist/`               |
+| lint    | `npm run lint`    | Run ESLint                  |
 
 Linting uses `eslint.config.js` (flat config) with React, React Hooks, React Refresh, and React Three plugins. Prettier is configured in `.prettierrc`.
 
